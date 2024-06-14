@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
 import authRouter from "./routes/auth.route.js";
+import userRouter from "./routes/user.route.js";
 dotenv.config();
 
 // initialize app
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 
 // router
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1", userRouter);
 
 // routing
 app.get("/", (req, res) => {
