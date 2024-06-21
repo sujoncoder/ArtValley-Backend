@@ -18,8 +18,8 @@ app.use(cors());
 app.use(morgan("dev"));
 
 // router
-app.use("/api/v1/auth", authRouter);
 app.use("/api/v1", userRouter);
+app.use("/api/v1/auth", authRouter);
 
 // routing
 app.get("/", (req, res) => {
